@@ -1,20 +1,11 @@
-import './App.css'
+import "./App.css";
 
-const Card = () => {
-    return (
-        <h2>Card component</h2>
-    )
-}
 const App = () => {
-    return (
-        <div>
-        <h2>Functional Arrow component</h2>
-            <Card />
-            <Card />
-            <Card />
-        </div>
+  return (
+    <div>
+      <h1 className="text-rose-500 underline text-3xl fon">Beasky</h1>
+    </div>
+  );
+};
 
-    )
-}
-
-export default App
+export default App;
