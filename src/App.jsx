@@ -63,7 +63,7 @@ const App = () => {
       const movies = await getTrendingMovies();
       setTrendingMovies(movies);
     } catch (error) {
-      console.error(`Error fetching trending movies. Please try again later`);
+      console.error(`Error fetching trending movies: ${error}`);
     }
   };
 
@@ -71,9 +71,9 @@ const App = () => {
     fetchMovies(debounceSearchTerm);
   }, [debounceSearchTerm]);
 
-  useEffect(() => {
-    loadTrendingMovies();
-  }, []);
+  // useEffect(() => {
+  //   loadTrendingMovies();
+  // }, []);
 
   return (
     <main>
@@ -89,15 +89,19 @@ const App = () => {
         </header>
         {trendingMovies.length > 0 && (
           <section className="trending">
-            <h2>Trending movies</h2>
-            {trendingMovies.map((movie, index) => (
-              <li key={movie.$id}>
-                <p>{index + 1}</p>
-                <img src={movie.poster_url} alt={movie.title} />
-              </li>
-            ))}
+            <h2>Trending Movies</h2>
+
+            <ul>
+              {trendingMovies.map((movie, index) => (
+                <li key={movie.$id}>
+                  <p>{index + 1}</p>
+                  <img src={movie.poster_url} alt={movie.title} />
+                </li>
+              ))}
+            </ul>
           </section>
         )}
+
         <section className="all-movies">
           <h2 className="">All Movies</h2>
           {isLoading ? (
