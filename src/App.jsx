@@ -71,9 +71,9 @@ const App = () => {
     fetchMovies(debounceSearchTerm);
   }, [debounceSearchTerm]);
 
-  // useEffect(() => {
-  //   loadTrendingMovies();
-  // }, []);
+  useEffect(() => {
+    loadTrendingMovies();
+  }, []);
 
   return (
     <main>
