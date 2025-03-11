@@ -58,22 +58,22 @@ const App = () => {
     }
   };
 
-  const loadTrendingMovies = async () => {
-    try {
-      const movies = await getTrendingMovies();
-      setTrendingMovies(movies);
-    } catch (error) {
-      console.error(`Error fetching trending movies: ${error}`);
-    }
-  };
+  // const loadTrendingMovies = async () => {
+  //   try {
+  //     const movies = await getTrendingMovies();
+  //     setTrendingMovies(movies);
+  //   } catch (error) {
+  //     console.error(`Error fetching trending movies: ${error}`);
+  //   }
+  // };
 
   useEffect(() => {
     fetchMovies(debounceSearchTerm);
   }, [debounceSearchTerm]);
 
-  useEffect(() => {
-    loadTrendingMovies();
-  }, []);
+  // useEffect(() => {
+  //   loadTrendingMovies();
+  // }, []);
 
   return (
     <main>
